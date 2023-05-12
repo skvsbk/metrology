@@ -5,3 +5,5 @@
 # Usage
 
 sudo docker-compose up --build -d
+
+http://server-name:8099
