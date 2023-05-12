@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+
+  fgis:
+    build: .
+    container_name: poverka_fgis
+    restart: on-failure
+    ports:
+      - 8099:5000

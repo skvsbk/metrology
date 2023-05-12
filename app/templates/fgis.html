@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Результаты поверки из fgis.gost.ru
+{% endblock %}
+
+{% block body %}
+<div class="container-sm">
+    <h2>Получение данных о поверке приборов из системы "Аршин"</h2>
+    <br>
+    <a>Загрузите файл .xlsx и получите архив с документами.</a>
+    <br><br>
+    <a>Формат .xlsx: </a>
+    <br>
+    <div class="row">
+        <div class="col">
+        <table class="table table-bordered border-primary">
+          <tr>
+            <th>Зав.№</th>
+            <th>ГРСИ</th>
+            <th>Поверитель</th>
+          </tr>
+          <tr>
+            <td>12-8318</td>
+            <td>50519-17</td>
+            <td>ООО «МетрЛифтСервис»</td>
+          </tr>
+          <tr>
+            <td>А012</td>
+            <td>25913-08</td>
+            <td>ФБУ "ТЕСТ-С.-ПЕТЕРБУРГ"</td>
+          </tr>
+        </table>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <br><br>
+<!--    <input type="file">-->
+    <form action="{{ url_for('view') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+        <input type="submit" value="Загрузить">
+    </form>
+    <br><br>
+</div>
+<!--    <a>Либо введите Зав.№, ГРСИ, Поверитель.</a><br>-->
+<!--    <label>Зав.№</label><input type="text"><br>-->
+<!--    <label>ГРСИ</label><input type="text"><br>-->
+<!--    <label>Поверитель</label><input type="text"><br>-->
+<!--    <button>Получить</button><br>-->
+{% endblock %}
